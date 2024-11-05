@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnier-Konfiguration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Turnier Konfiguration</h1>
+
+        <!-- Step 1: Turnier Name -->
+        <div class="step">
+            <label for="tournament-name">1. Setze den Turnier Namen:</label>
+            <input type="text" id="tournament-name" placeholder="Turnier Name">
+        </div>
+
+        <!-- Step 2: Startdatum -->
+        <div class="step">
+            <label for="start-date">2. Wann soll das Turnier beginnen? (Format: yyyy-MM-dd HH:mm UTC)</label>
+            <input type="datetime-local" id="start-date">
+            <p>Beispiel: 01:01:2024 12:00</p>
+        </div>
+
+        <!-- Step 3: Enddatum -->
+        <div class="step">
+            <label for="end-date">3. Wann soll das Turnier enden? (Format: yyyy-MM-dd HH:mm UTC)</label>
+            <input type="datetime-local" id="end-date">
+            <p>Beispiel: 01:01:2024 12:00</p>
+        </div>
+
+        <!-- Step 4: Spieler Ranking -->
+        <div class="step">
+            <label for="ranking">4. Wie sollen die Spieler gerankt werden?</label>
+            <select id="ranking">
+                <option value="pp">Nach der Menge an PP</option>
+                <option value="score">Nach der Map-Punktzahl</option>
+            </select>
+        </div>
+
+        <!-- Step 5: Anzahl der Belohnungsplätze -->
+        <div class="step">
+            <label for="reward-places">5. Für wie viele Plätze soll eine Belohnung vergeben werden? (z.B. 1, 2, 5)</label>
+            <input type="number" id="reward-places" min="1" placeholder="Anzahl der Top-Spieler">
+        </div>
+
+        <!-- Step 6: Belohnung -->
+        <div class="step">
+            <label for="reward">6. Was ist die Belohnung?</label>
+            <input type="text" id="reward" placeholder="Belohnung">
+        </div>
+
+        <!-- Step 7: Gewinner Nachricht -->
+        <div class="step">
+            <label for="message">7. Möchtest du eine spezielle Nachricht an die Gewinner senden? (Gib NO ein, wenn nicht)</label>
+            <input type="text" id="message" placeholder="Nachricht an die Gewinner">
+        </div>
+
+        <!-- Step 8: Intervall für neue Maps -->
+        <div class="step">
+            <label for="map-interval">8. In welchem Intervall sollen neue Maps verfügbar sein?</label>
+            <select id="map-interval">
+                <option value="1440">Eine Map pro Tag</option>
+                <option value="720">Eine Map alle 12 Stunden</option>
+                <option value="360">Eine Map alle 6 Stunden</option>
+                <option value="180">Eine Map alle 3 Stunden</option>
+                <option value="60">Eine Map jede Stunde</option>
+                <option value="30">Eine Map alle 30 Minuten</option>
+                <option value="10">Eine Map alle 10 Minuten</option>
+                <option value="5">Eine Map alle 5 Minuten</option>
+            </select>
+        </div>
+
+        <!-- Step 9: Beatmaps Links mit Plus-Button -->
+        <div class="step">
+            <label for="maps">9. Sende jetzt deine Beatmap-Links:</label>
+            <ul id="beatmap-list"></ul> <!-- Liste der hinzugefügten Beatmaps -->
+            <button id="add-map" class="btn-small">+</button> <!-- Plus-Button -->
+        </div>
+
+        <!-- Anzeige Aktiver Turniere -->
+        <div class="step">
+            <h2>Aktive Turniere</h2>
+            <div id="active-tournaments">
+                <p>Zurzeit gibt es keine aktiven Turniere.</p>
+            </div>
+        </div>
+
+        <!-- Anzeige Punktestand der Spieler -->
+        <div class="step">
+            <h2>Punktestand aller Spieler</h2>
+            <div id="player-scores">
+                <p>Zurzeit keine Punktstände verfügbar.</p>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button id="submit" class="btn">Turnier einrichten</button>
+
+        <!-- Script -->
+        <script src="script.js"></script>
+        
+    </div>
+</body>
+</html>
